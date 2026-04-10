@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Book } from "./Books.types";
+import { API_CONFIG } from "../config";
 
 export const BookList = () => {
   const [books, setBooks] = useState<Book[]>([]);
@@ -7,7 +8,7 @@ export const BookList = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const results = await fetch("https://localhost:7160/api/books");
+        const results = await fetch(`${API_CONFIG.baseUrl}/api/books`);
         const response = (await results.json()) as Book[];
         setBooks(response);
       } catch (err) {
