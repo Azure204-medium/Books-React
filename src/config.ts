@@ -1,3 +1,3 @@
 export const API_CONFIG = {
-    baseUrl : 'https://localhost:7160'
+    baseUrl : 'https://books-webapp-dev.azurewebsites.net/api/books'
 }
